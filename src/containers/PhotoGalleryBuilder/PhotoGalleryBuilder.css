@@ -1,0 +1,17 @@
+.PhotoGalleryContainer {
+    width: 100%;
+    margin: auto;
+    overflow: scroll;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.PhotoGalleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+    margin: 0;
+    padding: 100;
+    cursor: pointer;
+  }
