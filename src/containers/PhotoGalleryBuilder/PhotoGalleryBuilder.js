@@ -13,6 +13,7 @@ class PhotoGalleryBuilder extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.findNext = this.findNext.bind(this);
         this.findPrev = this.findPrev.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
@@ -46,7 +47,7 @@ class PhotoGalleryBuilder extends Component {
             <React.Fragment>
                 { loading && <div> loading... </div> }
                 { !loading &&
-                    <div>
+                    <div className="PhotoGalleryContainer">
                         <div className="PhotoGalleryGrid">
                             <PhotoGallery data={photoGallery} 
                                           callBack={(index) => this.openModal(index)}/>
@@ -55,9 +56,9 @@ class PhotoGalleryBuilder extends Component {
                             closeModal={this.closeModal}
                             findPrev={this.findPrev}
                             findNext={this.findNext}
-                            hasNext={this.state.currentIndex > 0}
-                            hasPrev={this.state.currentIndex + 1 < photoGallery.length}
-                            src={photoGallery[this.state.currentIndex]}/>
+                            hasPrev={this.state.currentIndex > 0}
+                            hasNext={this.state.currentIndex + 1 < photoGallery.length}
+                            src={photoGallery[this.state.currentIndex]?.originalImageURL}/>
                     </div>   
                 }
             </React.Fragment>

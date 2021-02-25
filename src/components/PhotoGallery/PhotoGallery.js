@@ -5,8 +5,8 @@ const photoGallery = (props) => {
     const{ data, callBack } = props;
     return (
         data.map((data,index) => (
-            <div className="ThumbnailPhoto" onClick={callBack}>
-                <img src={data.thumbnailURL} key={index} alt="" width={data.width} height={data.height} />
+            <div key={data.id} className="ThumbnailPhoto" onClick={()=>callBack(index)}>
+                <img src={data.thumbnailURL} alt="" width={data.width} height={data.height} />
                 <div className="ThumbnailPhotoCaption">{data.name}</div>
             </div>
         ))

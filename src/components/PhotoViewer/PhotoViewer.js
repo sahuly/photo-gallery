@@ -12,11 +12,11 @@ class PhotoViewer extends Component {
           <div>
             <div className="modal-overlay" onClick={closeModal}></div>
             <div isOpen={!!src} className="modal"> 
-              <div className='modal-body'>
-                <a href="#" className="modal-close" onClick={closeModal} onKeyDown={this.handleKeyDown}>X</a>
-                {hasPrev && <a href="#" className='modal-prev' onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
-                {hasNext && <a href="#" className='modal-next' onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
-                <img src={src}/>
+              <div className="modal-body">
+                <i className="modal-close" onClick={closeModal}>X</i>
+                {hasPrev && <i className='modal-prev' onClick={findPrev}>&lsaquo;</i>}
+                {hasNext && <i className='modal-next' onClick={findNext}>&rsaquo;</i>}
+                <img src={src} alt="" width="800" height="550"/>
               </div>
             </div>
           </div>
